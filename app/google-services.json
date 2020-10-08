@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "9707023153",
+    "firebase_url": "https://cosc481w-group-3.firebaseio.com",
+    "project_id": "cosc481w-group-3",
+    "storage_bucket": "cosc481w-group-3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9707023153:android:a9347a00658611346e9e10",
+        "android_client_info": {
+          "package_name": "com.example.cosc481wgroup3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9707023153-6a4cmdj5oan9c36qjd5n7rc3s2ab4vhm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhPMHwC6P_tyJbTTgQQd_NmP66jVnSEOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9707023153-6a4cmdj5oan9c36qjd5n7rc3s2ab4vhm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
