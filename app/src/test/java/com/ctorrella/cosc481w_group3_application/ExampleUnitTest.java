@@ -1,4 +1,4 @@
-package com.example.cosc481wgroup3;
+package com.ctorrella.cosc481w_group3_application;
 
 import org.junit.Test;
 

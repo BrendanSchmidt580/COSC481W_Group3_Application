@@ -4,12 +4,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SubmitAttendance">
 
     <TableLayout
         android:layout_centerInParent="true"
         android:layout_height="wrap_content"
-        android:layout_width="600px"
+        android:layout_width="match_parent"
 
         >
         <TableRow
@@ -18,13 +18,12 @@
             <TextView
                 android:textSize="7pt"
                 android:padding="20px"
-                android:text="username: "/>
-            <EditText
-                android:id="@+id/usernameEditText"
+                android:text="class meet time: "/>
+            <TextView
+                android:id="@+id/timeTextView"
                 android:textSize="7pt"
                 android:padding="20px"
-                android:hint="identifier"
-                android:minWidth="100dp"/>
+                android:text="undefined"/>
         </TableRow>
 
         <TableRow
@@ -32,13 +31,22 @@
             <TextView
                 android:textSize="7pt"
                 android:padding="20px"
-                android:text="password: "/>
-            <EditText
-                android:id="@+id/passwordEditText"
+                android:text="meeting location: "/>
+            <TextView
+                android:id="@+id/locationTextView"
                 android:textSize="7pt"
                 android:padding="20px"
-                android:hint="passcode"
-                android:minWidth="100dp"/>
+                android:text="undefined"/>
+        </TableRow>
+
+        <TableRow
+            android:gravity="center_horizontal">
+            <TextView
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="100dp"
+                android:textSize="7pt"
+                android:padding="20px"
+                android:text="google maps API insert here showing\ncurrent location and expected location"/>
         </TableRow>
 
         <TableRow
@@ -47,9 +55,10 @@
                 android:id="@+id/loginButton"
                 android:padding="20px"
                 android:layout_span="2"
-                android:text="attempt login"
+                android:text="está aquí"
                 />
         </TableRow>
+
 
 
 

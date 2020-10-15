@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "COSC481W Group 3"
+rootProject.name = "COSC481W_Group3_Application"
