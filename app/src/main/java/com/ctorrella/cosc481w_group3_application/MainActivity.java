@@ -57,12 +57,24 @@ public class MainActivity extends AppCompatActivity {
                 //If user not logged in (Doesn't exist in DB), register them, then push to next View.
                 //Otherwise they're logged in (Does Exist in DB), push to next View
 
-                if(email.equals(password)) //This is just temp, should be "Loggin Successful" then start Activity
-                {
+                login(email, password, intent);
+            }
+        };
+
+        loginButton.setOnClickListener(listener);
+
+    }
+
+    public void login(String email, String password, Intent intent)
+    {
+        fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()) {
+                    Toast.makeText(getApplicationContext(), "User Logged In", Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 }
-                else //This means the user doesn't exist in the database, need to register them
-                {
+                else {
                     fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>()
                     {
                         @Override
@@ -75,16 +87,13 @@ public class MainActivity extends AppCompatActivity {
                             }
                             else
                             {   //Register didn't go fine.
-                                Toast.makeText(getApplicationContext(), "Error in Registration" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Error in Registration " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
                 }
-
             }
-        };
-
-        loginButton.setOnClickListener(listener);
-
+        });
     }
+
 }
