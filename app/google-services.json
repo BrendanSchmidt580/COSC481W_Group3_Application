@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "889807431977",
+    "firebase_url": "https://cosc481w-group3-applicationnew.firebaseio.com",
+    "project_id": "cosc481w-group3-applicationnew",
+    "storage_bucket": "cosc481w-group3-applicationnew.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889807431977:android:f96fa78706b126ffaeaf38",
+        "android_client_info": {
+          "package_name": "com.ctorrella.cosc481w_group3_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889807431977-45ap9vpjjc4sv90d6oc0n856j718higc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdJ8ueXJBSBQjNNk-KO8yRc1NLwfdXqCA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889807431977-45ap9vpjjc4sv90d6oc0n856j718higc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

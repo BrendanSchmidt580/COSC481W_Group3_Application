@@ -1,15 +1,26 @@
 package com.ctorrella.cosc481w_group3_application;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
+
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,25 +33,58 @@ public class MainActivity extends AppCompatActivity {
         EditText passwordEditText = findViewById(R.id.passwordEditText);
         Button loginButton = findViewById(R.id.loginButton);
 
+        fAuth = FirebaseAuth.getInstance();
+        if(fAuth.getCurrentUser() != null){ //Check if the user is already logged in.
+            startActivity(intent);
+        }
+
+
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //do something when the button is clicked
-                if (MainActivity.login(usernameEditText.getText().toString(), passwordEditText.getText().toString()));
-                startActivity(intent);
+                String email = usernameEditText.getText().toString();
+                String password = passwordEditText.getText().toString();
+
+                if(TextUtils.isEmpty(email)){ //If email field is empty, return error
+                    usernameEditText.setError("Email is Required to Login.");
+                    return;
+                }
+                if(TextUtils.isEmpty(password)){ //If password field is empty, return error
+                    passwordEditText.setError("Password is Required to Login.");
+                    return;
+                }
+                //If user not logged in (Doesn't exist in DB), register them, then push to next View.
+                //Otherwise they're logged in (Does Exist in DB), push to next View
+
+                if(email.equals(password)) //This is just temp, should be "Loggin Successful" then start Activity
+                {
+                    startActivity(intent);
+                }
+                else //This means the user doesn't exist in the database, need to register them
+                {
+                    fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>()
+                    {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task)
+                        {
+                            if(task.isSuccessful())
+                            {   //Register went fine.
+                                Toast.makeText(getApplicationContext(), "User Created.", Toast.LENGTH_SHORT).show();
+                                startActivity(intent);
+                            }
+                            else
+                            {   //Register didn't go fine.
+                                Toast.makeText(getApplicationContext(), "Error in Registration" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }
+
             }
         };
 
         loginButton.setOnClickListener(listener);
 
     }
-
-    public static boolean login(String username, String password){
-        if (username.equals(password)) return true;
-        return false;
-    }
-
-
-
-
 }
