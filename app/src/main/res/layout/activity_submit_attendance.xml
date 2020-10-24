@@ -66,4 +66,13 @@
 
     </TableLayout>
 
+    <Button
+        android:id="@+id/LogoutButton"
+        android:layout_width="117dp"
+        android:layout_height="wrap_content"
+        android:onClick="logout"
+        android:text="Logout"
+        android:translationX="260sp"
+        android:translationY="660sp" />
+
 </RelativeLayout>
