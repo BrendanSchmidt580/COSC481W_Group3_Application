@@ -3,6 +3,7 @@
     package="com.ctorrella.cosc481w_group3_application">
     
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET"/>
     
     <application

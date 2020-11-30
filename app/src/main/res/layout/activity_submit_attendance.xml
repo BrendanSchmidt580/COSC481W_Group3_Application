@@ -12,18 +12,21 @@
         android:layout_width="match_parent"
 
         >
+
         <TableRow
             android:gravity="center_horizontal"
-            >
+            android:weightSum="1">
+
             <TextView
-                android:textSize="7pt"
                 android:padding="20px"
-                android:text="class meet time: "/>
+                android:text="class meet time: "
+                android:textSize="7pt" />
+
             <TextView
                 android:id="@+id/timeTextView"
-                android:textSize="7pt"
                 android:padding="20px"
-                android:text="undefined"/>
+                android:text="undefined"
+                android:textSize="7pt" />
         </TableRow>
 
         <TableRow
@@ -40,24 +43,43 @@
         </TableRow>
 
         <TableRow
+            android:layout_span="2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center_horizontal">
-            
-            <fragment
-                android:id="@+id/google_map"
-                android:layout_marginTop="100dp"
-                android:layout_marginBottom="100dp"
-                android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="150dp"
+                android:layout_height="550dp"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="150dp"
+                android:layout_height="550dp"
+                android:text="TextView"
+                android:visibility="invisible" />
 
         </TableRow>
 
         <TableRow
             android:gravity="center_horizontal">
+
             <Button
                 android:id="@+id/loginButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:padding="20px"
-                android:layout_span="2"
-                android:text="está aquí"
-                />
+                android:text="está aquí" />
+
+            <Button
+                android:id="@+id/LogoutButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="logout"
+                android:text="Logout" />
+
         </TableRow>
 
 
@@ -67,13 +89,12 @@
 
     </TableLayout>
 
-    <Button
-        android:id="@+id/LogoutButton"
-        android:layout_width="117dp"
-        android:layout_height="wrap_content"
-        android:onClick="logout"
-        android:text="Logout"
-        android:translationX="260sp"
-        android:translationY="660sp" />
+    <fragment
+        android:id="@+id/google_map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="420dp"
+        android:layout_height="550dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="100dp" />
 
 </RelativeLayout>
