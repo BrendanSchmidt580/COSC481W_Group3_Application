@@ -33,8 +33,6 @@ public class SubmitAttendance extends AppCompatActivity {
         SupportMapFragment supportMapFragment;
         FusedLocationProviderClient client;
 
-    //Could we add a logout button on this page?
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
