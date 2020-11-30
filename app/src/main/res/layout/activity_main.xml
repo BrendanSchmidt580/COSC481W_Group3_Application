@@ -7,52 +7,49 @@
     tools:context=".MainActivity">
 
     <TableLayout
-        android:layout_centerInParent="true"
-        android:layout_height="wrap_content"
-        android:layout_width="600px"
+        android:layout_width="294dp"
+        android:layout_height="183dp"
 
-        >
-        <TableRow
-            android:gravity="center_horizontal"
-            >
+        android:layout_centerInParent="true">
+
+        <TableRow android:gravity="center_horizontal">
+
             <TextView
-                android:textSize="7pt"
                 android:padding="20px"
-                android:text="username: "/>
+                android:text="Username: "
+                android:textSize="7pt" />
+
             <EditText
                 android:id="@+id/usernameEditText"
-                android:textSize="7pt"
+                android:hint="userName"
+                android:minWidth="100dp"
                 android:padding="20px"
-                android:hint="identifier"
-                android:minWidth="100dp"/>
+                android:textSize="7pt" />
         </TableRow>
 
-        <TableRow
-            android:gravity="center_horizontal">
+        <TableRow android:gravity="center_horizontal">
+
             <TextView
-                android:textSize="7pt"
                 android:padding="20px"
-                android:text="password: "/>
+                android:text="Password: "
+                android:textSize="7pt" />
+
             <EditText
                 android:id="@+id/passwordEditText"
-                android:textSize="7pt"
+                android:hint="Password"
+                android:minWidth="100dp"
                 android:padding="20px"
-                android:hint="passcode"
-                android:minWidth="100dp"/>
+                android:textSize="7pt" />
         </TableRow>
 
-        <TableRow
-            android:gravity="center_horizontal">
+        <TableRow android:gravity="center_horizontal">
+
             <Button
                 android:id="@+id/loginButton"
-                android:padding="20px"
                 android:layout_span="2"
-                android:text="attempt login"
-                />
+                android:padding="20px"
+                android:text="attempt login" />
         </TableRow>
-
-
-
 
 
     </TableLayout>

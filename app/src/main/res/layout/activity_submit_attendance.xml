@@ -19,7 +19,7 @@
 
             <TextView
                 android:padding="20px"
-                android:text="class meet time: "
+                android:text="Class Meeting Time"
                 android:textSize="7pt" />
 
             <TextView
@@ -31,10 +31,11 @@
 
         <TableRow
             android:gravity="center_horizontal">
+
             <TextView
-                android:textSize="7pt"
                 android:padding="20px"
-                android:text="meeting location: "/>
+                android:text="Meeting Location:"
+                android:textSize="7pt" />
             <TextView
                 android:id="@+id/locationTextView"
                 android:textSize="7pt"
