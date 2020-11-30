@@ -16,7 +16,7 @@
         
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBycCuc3XE9T0ktg2_kAImfKMhCeKTrwwY"/>
+            android:value="AIzaSyALGKRIIPkGBoZ8FMP0UCv9SEvwbaC6juc"/>
 
         
         <activity android:name=".SubmitAttendance"></activity>
