@@ -48,14 +48,14 @@ public class SubmitAttendance extends AppCompatActivity {
         client = LocationServices.getFusedLocationProviderClient(this);
 
         //Check permission
-        if(ActivityCompat.checkSelfPermission(MainActivity.this,
+        if(ActivityCompat.checkSelfPermission(SubmitAttendance.this,
                 Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
             //When permission is granted call getCurrentLocation method
             getCurrentLocation();
         }else{
             //When permission is denied
             //Request permission
-            ActivityCompat.requestPermissions(MainActivity.this,
+            ActivityCompat.requestPermissions(SubmitAttendance.this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},44);
         }
     }
