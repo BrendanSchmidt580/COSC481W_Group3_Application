@@ -3,7 +3,9 @@ package com.ctorrella.cosc481w_group3_application;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -41,10 +43,16 @@ public class MainActivity extends AppCompatActivity {
     //Initialize variables
     FirebaseAuth fAuth;
 
+    public static SharedPreferences prefs;
+
+    public static String emailForChris;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        prefs = getApplicationContext().getSharedPreferences("MyPref", 0);
 
         Intent intent = new Intent(this, SubmitAttendance.class);
 
@@ -63,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //do something when the button is clicked
                 String email = usernameEditText.getText().toString();
+                //for Chris
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("email", email);
+                editor.commit();
+
                 String password = passwordEditText.getText().toString();
 
                 if(TextUtils.isEmpty(email)){ //If email field is empty, return error
